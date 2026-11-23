@@ -275,13 +275,20 @@ a:focus-visible,summary:focus-visible {outline:3px solid var(--blue);outline-off
   .welcome-rail .down-link {display:none}
   .welcome-sms {
     display:inline-flex;align-items:center;justify-content:center;gap:7px;grid-column:2;grid-row:1/3;
-    min-height:44px;padding:6px 12px;border:1px solid #baa48b;border-radius:7px;
-    background:#f6efe1;color:#794c36;font-size:14px;font-weight:500;line-height:1.25;
-    text-align:center;text-decoration:none;
+    min-height:44px;padding-inline:3px;color:var(--green);
+    font-size:14px;font-weight:500;line-height:1.35;text-decoration:none;
   }
-  .welcome-sms svg {width:17px;height:17px;flex:none}
-  a.welcome-sms:hover,a.welcome-sms:active {background:#efe2cd;border-color:#a48869}
-  .welcome-sms.booking-number {padding-inline:0;border:0;background:transparent;white-space:nowrap}
+  .welcome-sms svg {
+    box-sizing:border-box;width:28px;height:27px;padding:4px;flex:none;
+    color:#61462c;background:#f1dfb8;border-radius:48% 54% 46% 51%;
+  }
+  .welcome-sms span {
+    text-decoration:underline;text-decoration-thickness:1px;
+    text-decoration-color:#99a18b;text-underline-offset:.28em;
+  }
+  .welcome-sms:is(:hover,:focus-visible,:active) span {text-decoration-color:currentColor}
+  .welcome-sms:active svg {background:#ead3a2}
+  .welcome-sms.booking-number {padding-inline:0;white-space:nowrap}
   :is(#oil-options,#cupping-options) {scroll-margin-block-start:16px}
   .mast {padding-bottom:0;flex-wrap:wrap;min-height:60px;gap:0 2px}
   .has-js #site-menu-toggle {
